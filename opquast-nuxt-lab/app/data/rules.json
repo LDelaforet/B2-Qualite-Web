@@ -70,5 +70,23 @@
       "https://www.nuxt.com/blog",
       "https://developer.mozilla.org/fr/"
     ]
+  },
+  {
+    "id": 87,
+    "title": "Les processus complexes sont accompagnés de la liste de leurs étapes.",
+    "authors": ["Adrien LECOMTE"],
+    "path": "/rules/87",
+    "description": "Il est toujours appréciable de connaître à l’avance le nombre d’étapes et de pouvoir estimer le temps nécessaire pour réaliser une longue démarche",
+    "tags": ["Basics", "Accessibilité", "Conception", "Formulaires"],
+    "objectives": [
+      "Donner de la visibilité à l'utilisateur sur les actions qu'il va réaliser (ordre des étapes, informations nécessaires pour les accomplir, etc.). ",
+      "Éviter que l'utilisateur ne se sente piégé dans un processus dont il n'avait pas prévu la durée."
+    ],
+    "implementationIntro": "Pour tout processus complexe, par exemple un formulaire de commande, afficher à chaque étape la liste intégrale de toutes ses étapes.",
+    "implementation": [],
+    "control": [
+      "Vérifier, pour chaque page concernée, que la liste des étapes y est indiquée, en règle générale sous forme d'un chemin d'étapes en tête de page ou de formulaire."
+    ],
+    "screenshotsSources": []
   }
 ]
