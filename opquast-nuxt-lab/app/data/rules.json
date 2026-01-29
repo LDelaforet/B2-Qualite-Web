@@ -48,6 +48,30 @@
     "objective": "Assurer que les informations essentielles sont facilement accessibles et compréhensibles pour tous les utilisateurs, y compris ceux ayant des besoins spécifiques."
   },
   {
+    "id": 10,
+    "title": "Les contenus ou fichiers destinés à des espaces publics peuvent être vérifiés avant leur envoi définitif.",
+    "authors": ["Marco BARONI"],
+    "path": "/rules/10",
+    "description": "Il est fort agaçant de voir publier un message sous une forme dégradée ou de constater après envoi que l’on a écrit une grosse bêtise. La prévisualisation permet de voir les contenus en contexte et donne la possibilité de les corriger ou de les peaufiner.",
+    "tags": ["Contenus", "Développement"],
+    "objectives": [
+      "Permettre à l’utilisateur de vérifier sa saisie en contexte et, si nécessaire, de la corriger avant envoi.",
+      "Diminuer le nombre de demandes de rectification ou de suppression."
+    ],
+    "implementationIntro": "Mettre en place une prévisualisation des informations saisies avant la soumission définitive du formulaire, avec possibilité de les modifier.",
+    "implementation": [],
+    "control": [
+      "Pour chaque espace public du site (zone de commentaire, forum, page personnelle publique, avatar, portfolio de documents, etc.) :",
+      "Saisir des informations destinées à être rendues publiques telles que des images associées à un compte ou un commentaire.",
+      "Vérifier que la soumission définitive du formulaire de saisie est précédée d'une étape permettant, si l'utilisateur le souhaite, de contrôler et de modifier le résultat de sa saisie avant publication."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
     "id": 22,
     "title": "Système d'Authentification Unifiée",
     "authors": ["Marco BARONI"],
@@ -76,28 +100,28 @@
     "screenshotsSources": []
   },
   {
-    "id": 10,
-    "title": "Les contenus ou fichiers destinés à des espaces publics peuvent être vérifiés avant leur envoi définitif.",
+    "id": 23,
+    "title": "L'utilisateur peut désactiver toutes ses connexions actives",
     "authors": ["Marco BARONI"],
-    "path": "/rules/10",
-    "description": "Il est fort agaçant de voir publier un message sous une forme dégradée ou de constater après envoi que l’on a écrit une grosse bêtise. La prévisualisation permet de voir les contenus en contexte et donne la possibilité de les corriger ou de les peaufiner.",
-    "tags": ["Contenus", "Développement"],
+    "path": "/rules/23",
+    "description": "Permettre à l'utilisateur de protéger ses données et contenus personnels en contrôlant ses sessions actives",
+    "tags": ["Sécurité", "Authentification", "Confidentialité", "UX"],
     "objectives": [
-      "Permettre à l’utilisateur de vérifier sa saisie en contexte et, si nécessaire, de la corriger avant envoi.",
-      "Diminuer le nombre de demandes de rectification ou de suppression."
+      "Permettre à l'utilisateur de protéger ses données et contenus personnels.",
+      "Limiter les risques d'usurpation d'identité.",
+      "Renforcer la confiance des utilisateurs sur l'utilisation de leurs données"
     ],
-    "implementationIntro": "Mettre en place une prévisualisation des informations saisies avant la soumission définitive du formulaire, avec possibilité de les modifier.",
-    "implementation": [],
+    "implementationIntro": "Fournir à l'utilisateur un mécanisme lui permettant de désactiver globalement toutes les connexions actives de ses différents appareils au service ou à l'espace privé.",
+    "implementation": [
+      "Ajouter une section de gestion des sessions dans les paramètres utilisateur",
+      "Afficher la liste de tous les appareils connectés avec leur localisation et date de connexion",
+      "Permettre de terminer une session spécifique",
+      "Ajouter un bouton pour déconnecter tous les appareils en une seule action"
+    ],
     "control": [
-      "Pour chaque espace public du site (zone de commentaire, forum, page personnelle publique, avatar, portfolio de documents, etc.) :",
-      "Saisir des informations destinées à être rendues publiques telles que des images associées à un compte ou un commentaire.",
-      "Vérifier que la soumission définitive du formulaire de saisie est précédée d'une étape permettant, si l'utilisateur le souhaite, de contrôler et de modifier le résultat de sa saisie avant publication."
+      "Se connecter au service ou à l'espace privé à partir de plusieurs périphériques différents, et vérifier que le site permet de désactiver globalement toutes les connexions actives."
     ],
-    "screenshotsSources": [
-      "https://www.gmail.com/",
-      "https://www.nuxt.com/blog",
-      "https://developer.mozilla.org/fr/"
-    ]
+    "screenshotsSources": []
   },
   {
     "id": 87,
