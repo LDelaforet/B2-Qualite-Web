@@ -102,7 +102,7 @@
   {
     "id": 10,
     "title": "Les contenus ou fichiers destinés à des espaces publics peuvent être vérifiés avant leur envoi définitif.",
-    "authors": ["Abdulmalek ESUGHI"],
+    "authors": ["Marco BARONI"],
     "path": "/rules/10",
     "description": "Il est fort agaçant de voir publier un message sous une forme dégradée ou de constater après envoi que l’on a écrit une grosse bêtise. La prévisualisation permet de voir les contenus en contexte et donne la possibilité de les corriger ou de les peaufiner.",
     "tags": ["Contenus", "Développement"],
