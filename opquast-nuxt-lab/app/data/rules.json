@@ -90,6 +90,186 @@
     "screenshotsSources": []
   },
   {
+    "id": 72,
+    "title": "Le format de saisie des champs de formulaire qui le nécessitent est indiqué",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/72",
+    "description": "Évitons de transformer une saisie de date, de monnaie ou autre en jeu de devinette. Il faut indiquer clairement le format attendu.",
+    "tags": ["Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Limiter le risque d'erreurs de saisie.",
+      "Limiter les risques associés à l'envoi de données erronées.",
+      "Éviter que l'utilisateur ne renonce faute d'information.",
+      "Améliorer l’accessibilité."
+    ],
+    "implementationIntro": "Indiquer le format attendu directement dans le label ou la description du champ.",
+    "implementation": [
+      "Utiliser l'attribut placeholder (avec précaution, car il disparaît).",
+      "Préférer une indication permanente dans le <label>.",
+      "Utiliser un texte d'aide associé via aria-describedby."
+    ],
+    "control": [
+      "Soumettre des formats incorrects pour voir si l'erreur est bien gérée.",
+      "Vérifier la présence de l'indication de format dans le code."
+    ],
+    "screenshotsSources": ["https://sncf-connect.com","https://airbnb.fr","https://amazon.fr"]
+  },
+  {
+    "id": 73,
+    "title": "L'utilisateur est averti lorsqu'une saisie est sensible à la casse",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/73",
+    "description": "Il est agaçant de devoir recommencer une saisie parce qu'on ignorait qu'il fallait des majuscules.",
+    "tags": ["Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Éviter le risque d'erreur.",
+      "Éviter l'incompréhension de l'utilisateur face à une erreur.",
+      "Améliorer l’accessibilité."
+    ],
+    "implementationIntro": "Préciser explicitement si des majuscules ou minuscules sont imposées.",
+    "implementation": [
+      "Ajouter la mention 'Respecter la casse' ou 'Majuscules obligatoires' dans le label.",
+      "Utiliser un message d'aide visible."
+    ],
+    "control": [
+      "Tester la saisie avec et sans respect de la casse.",
+      "Vérifier la présence de l'avertissement dans le label ou aria-label."
+    ],
+    "screenshotsSources": ["https://www2.hm.com","https://secure.fnac.com","https://amazon.fr"]
+  },
+  {
+    "id": 74,
+    "title": "L'étiquette de chaque champ de formulaire qui le nécessite indique les limites de nombre de caractères",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/74",
+    "description": "Préciser les limites en nombre de caractères pour éviter les coupures de texte inattendues.",
+    "tags": ["Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Prévenir les erreurs d’envoi.",
+      "Prévenir les pertes de données.",
+      "Éviter l'agacement de l'utilisateur."
+    ],
+    "implementationIntro": "Afficher la limite de caractères et idéalement un compteur dynamique.",
+    "implementation": [
+      "Indiquer 'Max 140 caractères' dans le label.",
+      "Utiliser l'attribut maxlength sur l'input.",
+      "Ajouter un compteur visuel (JS)."
+    ],
+    "control": [
+      "Vérifier que la limite est indiquée textuellement.",
+      "Vérifier la cohérence avec la contrainte technique (maxlength)."
+    ],
+    "screenshotsSources": ["https://x.com","https://linkedin.com","https://ads.google.com"]
+  },
+  {
+    "id": 75,
+    "title": "La création d'un mot de passe par l'utilisateur fait l'objet d'un mécanisme de prévention des erreurs de saisie",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/75",
+    "description": "Éviter à l'utilisateur de définir un mot de passe erroné qu'il ne pourra pas réutiliser ensuite.",
+    "tags": ["Basics", "Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Garantir que le mot de passe enregistré est bien celui souhaité."
+    ],
+    "implementationIntro": "Mettre en place une confirmation ou une visualisation.",
+    "implementation": [
+      "Ajouter un champ 'Confirmez votre mot de passe'.",
+      "Vérifier la correspondance des deux champs en JS."
+    ],
+    "control": [
+      "Vérifier la présence du champ de confirmation lors de la création de compte."
+    ],
+    "screenshotsSources": ["https://discord.com","https://linkedin.com","https://myaccount.google.com"]
+  },
+  {
+    "id": 76,
+    "title": "Les caractères saisis dans un champ de mot de passe peuvent être affichés en clair",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/76",
+    "description": "Donner la possibilité d'afficher le mot de passe pour vérifier sa saisie, surtout sur mobile.",
+    "tags": ["Basics", "Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Faciliter la saisie, notamment sur mobile.",
+      "Prévenir les erreurs."
+    ],
+    "implementationIntro": "Ajouter un bouton 'œil' pour basculer la visibilité.",
+    "implementation": [
+      "Créer un bouton qui change l'attribut type='password' en type='text'."
+    ],
+    "control": [
+      "Contrôler le fonctionnement du bouton d'affichage du mot de passe."
+    ],
+    "screenshotsSources": ["https://brave.com","https://x.com","https://fnac.com"]
+  },
+  {
+    "id": 77,
+    "title": "Chaque étiquette de formulaire est visuellement rattachée au champ qu'elle décrit",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/77",
+    "description": "L'emplacement de l'étiquette ne doit pas prêter à confusion sur le champ concerné.",
+    "tags": ["Accessibilité", "Conception", "Formulaires"],
+    "objectives": [
+      "Identifier sans ambiguïté les champs.",
+      "Prévenir les erreurs.",
+      "Faciliter l'usage."
+    ],
+    "implementationIntro": "Soigner le CSS (marges, espacements) pour grouper Label + Input.",
+    "implementation": [
+      "Placer le label juste au-dessus ou à gauche du champ.",
+      "Utiliser des marges (margin-bottom) pour séparer les groupes de champs."
+    ],
+    "control": [
+      "Vérifier la proximité immédiate (quelques pixels) entre label et champ.",
+      "Vérifier l'absence d'ambiguïté sur mobile."
+    ],
+    "screenshotsSources": ["https://www.booking.com","https://docs.google.com/forms","https://stripe-payments-demo.appspot.com"]
+  },
+  {
+    "id": 78,
+    "title": "Les informations contextuelles se rapportant à un champ de formulaire lui sont visuellement rattachées",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/78",
+    "description": "Les aides à la saisie (bulles d'aide, format, erreurs) doivent être collées au champ concerné.",
+    "tags": ["Accessibilité", "Conception", "Formulaires"],
+    "objectives": [
+      "Faciliter l'utilisation pour les utilisateurs de loupe d'écran.",
+      "Assurer la compréhension du lien entre l'aide et le champ."
+    ],
+    "implementationIntro": "Placer les textes d'aide dans le même conteneur visuel que le champ.",
+    "implementation": [
+      "Afficher l'aide sous le champ ou juste après le label.",
+      "Éviter les espaces vides importants entre l'input et son message d'aide."
+    ],
+    "control": [
+      "Vérifier la proximité immédiate des informations d'aide.",
+      "Vérifier l'absence d'espace vide important."
+    ],
+    "screenshotsSources": ["https://www.autoentrepreneur.urssaf.fr/","https://www.fnac.com","https://www.fnac.com"]
+  },
+  {
+    "id": 79,
+    "title": "En cas de rejet des données saisies dans un formulaire, les champs contenant les données rejetées sont indiqués à l'utilisateur",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/79",
+    "description": "L'utilisateur ne doit pas chercher ses erreurs. Elles doivent être signalées globalement et individuellement.",
+    "tags": ["Basics", "Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Donner un retour clair sur l'action.",
+      "Guider l'utilisateur vers les corrections."
+    ],
+    "implementationIntro": "Combiner un résumé des erreurs en haut de page et un marquage sur chaque champ.",
+    "implementation": [
+      "Ajouter un récapitulatif des erreurs en haut du formulaire.",
+      "Ajouter une classe CSS d'erreur et un message sous chaque champ concerné.",
+      "Modifier le <title> de la page pour inclure 'Erreur'."
+    ],
+    "control": [
+      "Soumettre un formulaire vide/invalide.",
+      "Vérifier le message global et le marquage individuel des champs."
+    ],
+    "screenshotsSources": ["https://www2.hm.com","https://www.booking.com","https://dashboard.stripe.com"]
+  },
+  {
     "id": 88,
     "title": "L'étape en cours d'un processus complexe est indiquée.",
     "authors": ["Adrien LECOMTE"],
