@@ -248,7 +248,7 @@
   {
     "id": 28,
     "title": "Les données sensibles ne sont pas transmises en clair dans l'URL",
-    "authors": ["Edwwiyyin"],
+    "authors": ["Edwiyyin"],
     "path": "/rules/28",
     "description": "Protéger les données sensibles en évitant qu'elles ne soient visibles dans l'URL",
     "tags": ["Sécurité", "Confidentialité", "Formulaires", "POST", "HTTP"],
