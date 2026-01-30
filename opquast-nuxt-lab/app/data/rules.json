@@ -71,6 +71,221 @@
       "https://developer.mozilla.org/fr/"
     ]
   },
+
+  {
+    "id": 58,
+    "title": "Au moins deux moyens de paiement sont acceptés.",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/58",
+    "description": "Certains internautes n’ont pas de chéquier, d’autres n’ont pas de carte de crédit ou bien leur carte de crédit a expiré. La présence d’un moyen de paiement alternatif permet de ne pas perdre ces clients.",
+    "tags": ["Basics", "E-Commerce"],
+    "objectives": [
+      "Permettre aux utilisateurs de choisir le mode de paiement qui leur convient le mieux.",
+      "Fournir une alternative en cas d'impossibilité d'utiliser un moyen de paiement précis."
+    ],
+    "implementationIntro": "Sur la page de paiement, proposez plusieurs options distinctes.",
+    "implementation": [
+      "Intégrer au moins deux types de paiement (ex: Carte Bancaire + PayPal).",
+      "Afficher clairement les icônes des modes de paiement acceptés.",
+      "Permettre le paiement par virement ou chèque si le paiement électronique échoue."
+    ],
+    "control": [
+      "Simuler un achat jusqu'à l'étape du paiement.",
+      "Vérifier la présence d'au moins deux options de règlement différentes."
+    ],
+    "screenshotsSources": ["https://www.decathlon.fr", "https://www.fnac.com"]
+  },
+
+  {
+    "id": 59,
+    "title": "Les données bancaires ne sont mémorisées qu'après consentement explicite de l'utilisateur",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/59",
+    "description": "L'enregistrement des coordonnées bancaires pour des achats ultérieurs ne doit jamais être automatique. Il doit résulter d'une action volontaire (opt-in) de l'utilisateur.",
+    "tags": [
+      "Basics",
+      "Accessibilité",
+      "Développement",
+      "E-Commerce",
+      "Privacy"
+    ],
+    "objectives": [
+      "Laisser l’utilisateur maître de ses choix en matière de mémorisation de données bancaires.",
+      "Prévenir d’éventuels problèmes juridiques en cas de plainte ou de vol de données.",
+      "Renforcer la confiance des utilisateurs sur l’utilisation de leurs données."
+    ],
+    "implementationIntro": "Le consentement doit être recueilli de manière éclairée et active :",
+    "implementation": [
+      "Ne pas enregistrer automatiquement les données de paiement.",
+      "Proposer une case à cocher (checkbox) non cochée par défaut pour la mémorisation.",
+      "Informer l'utilisateur sur la finalité de cet enregistrement (ex: facilité pour les prochaines commandes)."
+    ],
+    "control": [
+      "Simuler un processus de commande jusqu'au paiement.",
+      "Vérifier que les données bancaires ne sont pas mémorisées par défaut.",
+      "Vérifier que l'option d'enregistrement nécessite une validation explicite (opt-in)."
+    ],
+    "screenshotsSources": [
+      "https://www.amazon.fr",
+      "https://pay.google.com",
+      "https://www.fnac.com"
+    ]
+  },
+
+  {
+    "id": 60,
+    "title": "Les données bancaires mémorisées peuvent être modifiées ou supprimées",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/60",
+    "description": "Les utilisateurs doivent pouvoir accéder à tout moment à la gestion de leurs moyens de paiement enregistrés pour les mettre à jour ou les supprimer définitivement.",
+    "tags": ["Basics", "Développement", "E-Commerce", "Privacy"],
+    "objectives": [
+      "Prévenir les risques de fraude en permettant la suppression préventive des données.",
+      "Donner aux utilisateurs la maîtrise de leurs données bancaires.",
+      "Prévenir les erreurs de paiement en permettant la mise à jour des données expirées.",
+      "Renforcer la confiance des utilisateurs."
+    ],
+    "implementationIntro": "Le site doit proposer un espace de gestion dédié dans le compte utilisateur :",
+    "implementation": [
+      "Créer une rubrique 'Moyens de paiement' dans l'espace client.",
+      "Afficher la liste des cartes mémorisées (en masquant les numéros centraux).",
+      "Proposer un bouton 'Supprimer' clair pour chaque moyen de paiement.",
+      "Permettre la modification des informations (date d'expiration, nom)."
+    ],
+    "control": [
+      "Se connecter à un compte client ayant une carte enregistrée.",
+      "Vérifier qu'une option de suppression est présente et fonctionnelle.",
+      "Vérifier qu'une option de modification est disponible."
+    ],
+    "screenshotsSources": [
+      "https://www.amazon.fr/gp/css/homepage.html",
+      "https://www.paypal.com/myaccount/money/",
+      "https://www.netflix.com/YourAccount"
+    ]
+  },
+
+  {
+    "id": 61,
+    "title": "La référence de la transaction est affichée au client après la validation de sa commande",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/61",
+    "description": "Chaque transaction doit posséder un identifiant unique affiché dès la confirmation de l'achat pour permettre son suivi et servir de preuve en cas de réclamation.",
+    "tags": ["Conception", "Développement", "E-Commerce"],
+    "objectives": [
+      "Permettre aux utilisateurs d’afficher et d’imprimer une trace de leur commande.",
+      "Fournir aux utilisateurs une preuve écrite de l’opération effectuée.",
+      "Renforcer la traçabilité de la transaction."
+    ],
+    "implementationIntro": "Dès que le paiement est validé, le site doit générer une vue de confirmation :",
+    "implementation": [
+      "Générer un numéro de commande ou de transaction unique.",
+      "Afficher ce numéro de manière très visible sur la page de succès (Thank-you page).",
+      "Préciser que ce numéro a également été envoyé par e-mail.",
+      "Proposer un bouton d'impression de la page de confirmation."
+    ],
+    "control": [
+      "Mener une procédure de commande complète jusqu'au paiement.",
+      "Vérifier que la référence (ex: Commande n° FR-2024-849) apparaît sur la page finale."
+    ],
+    "screenshotsSources": [
+      "https://www.apple.com/fr/shop/bag",
+      "https://www.amazon.fr/gp/history",
+      "https://www.fnac.com"
+    ]
+  },
+
+  {
+    "id": 62,
+    "title": "Les factures émises sont également disponibles en ligne",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/62",
+    "description": "Les factures sont des documents essentiels pour la gestion privée ou professionnelle. Le site doit permettre de les consulter et de les télécharger directement depuis l'espace client.",
+    "tags": ["Basics", "Développement", "E-Commerce"],
+    "objectives": [
+      "Faciliter les opérations de gestion et de rapprochement par les utilisateurs.",
+      "Fournir une sauvegarde des données nécessaires à la comptabilité.",
+      "Éviter la perte d'informations en cas de suppression accidentelle d'un e-mail."
+    ],
+    "implementationIntro": "Le site doit centraliser les documents d'achat dans l'espace personnel :",
+    "implementation": [
+      "Créer une section 'Mes factures' ou 'Historique de commandes' dans le compte utilisateur.",
+      "Générer les factures au format PDF pour garantir l'intégrité de la mise en page.",
+      "Assurer la pérennité de l'accès (les factures doivent rester disponibles plusieurs années).",
+      "Permettre le téléchargement en un clic."
+    ],
+    "control": [
+      "Réaliser un achat sur le site.",
+      "Se rendre dans l'espace client une fois la commande validée.",
+      "Vérifier que la facture correspondante est présente et téléchargeable."
+    ],
+    "screenshotsSources": [
+      "https://www.amazon.fr/gp/css/order-history",
+      "https://www.ovhcloud.com/fr/billing/invoices/",
+      "https://www.sfr.fr/espace-client/factures"
+    ]
+  },
+
+  {
+    "id": 63,
+    "title": "Chaque facturation fait l'objet d'un mail de confirmation",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/63",
+    "description": "L'envoi systématique de la facture par e-mail permet à l'utilisateur de conserver une trace de ses achats, indépendamment de la disponibilité future du site ou de son compte en ligne.",
+    "tags": ["Basics", "Accessibilité", "Développement", "E-Commerce"],
+    "objectives": [
+      "Prévenir les pertes d’information et de factures en cas de fermeture de service.",
+      "Améliorer la traçabilité des opérations pour l'utilisateur.",
+      "Permettre une gestion documentaire autonome (archivage personnel)."
+    ],
+    "implementationIntro": "Le système de commande doit déclencher un envoi automatique :",
+    "implementation": [
+      "Configurer un serveur de mail (SMTP) lié au processus de validation de commande.",
+      "Joindre la facture au format PDF ou inclure un lien de téléchargement direct et pérenne.",
+      "S'assurer que l'objet du mail contient la référence de la commande pour faciliter la recherche.",
+      "Inclure les informations légales (TVA, coordonnées du vendeur) dans le corps du mail."
+    ],
+    "control": [
+      "Réaliser une commande test sur le site.",
+      "Vérifier la réception immédiate d'un e-mail de confirmation.",
+      "Vérifier que cet e-mail contient bien la facture ou un accès direct à celle-ci."
+    ],
+    "screenshotsSources": [
+      "https://www.apple.com/fr/",
+      "https://www.amazon.fr",
+      "https://www.uber.com/fr/"
+    ]
+  },
+
+  {
+    "id": 64,
+    "title": "Les mentions d'appartenance à un ordre ou groupe professionnel, d'un label ou d'une récompense sont accompagnées d'un lien vers la source",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/64",
+    "description": "Si vous mentionnez des tiers valorisants (labels, récompenses, ordres professionnels), l’internaute doit pouvoir vérifier la crédibilité de ces informations via un lien vers la source officielle.",
+    "tags": ["E-Commerce", "Éditorial", "Confiance"],
+    "objectives": [
+      "Donner un accès immédiat à l'utilisateur pour lui permettre de comprendre de quoi il s'agit.",
+      "Permettre à l'utilisateur de vérifier par lui-même l'information.",
+      "Accroître le degré de confiance ou de crédibilité du site."
+    ],
+    "implementationIntro": "Chaque logo ou mention de distinction doit être cliquable :",
+    "implementation": [
+      "Identifier tous les labels (Bio, Label Rouge, etc.) ou récompenses (Élu produit de l'année).",
+      "Ajouter un lien hypertexte sur le logo ou le texte vers le site de l'organisme émetteur.",
+      "Utiliser de préférence un lien ouvrant dans un nouvel onglet pour ne pas perdre l'utilisateur.",
+      "Ajouter un attribut 'title' ou 'aria-label' pour expliciter la destination du lien."
+    ],
+    "control": [
+      "Rechercher les logos de labels ou de récompenses sur le site (souvent en footer ou page à propos).",
+      "Vérifier que chaque élément est bien accompagné d'un lien vers la source de référence."
+    ],
+    "screenshotsSources": [
+      "https://www.opquast.com",
+      "https://www.biocoop.fr",
+      "https://www.tripadvisor.fr"
+    ]
+  },
+
   {
     "id": 87,
     "title": "Les processus complexes sont accompagnés de la liste de leurs étapes.",
@@ -115,7 +330,7 @@
     "authors": ["Adrien LECOMTE"],
     "path": "/rules/89",
     "description": "Après avoir décidé de passer à l’étape suivante d’un processus complexe, il arrive souvent d’avoir besoin de vérifier ce qu’on a saisi précédemment. Laissez aux internautes la possibilité de douter, de vérifier, et de se tromper, bien sûr.",
-    "tags": ["Accessibilité","Développement", "Conception", "Formulaires"],
+    "tags": ["Accessibilité", "Développement", "Conception", "Formulaires"],
     "objectives": [
       "Faciliter l’utilisation des formulaires répartis sur plusieurs pages successives.",
       "Réduire les risques d’erreurs de saisie. Limiter les risques d’abandon en cours de processus."
@@ -133,7 +348,13 @@
     "authors": ["Adrien LECOMTE"],
     "path": "/rules/90",
     "description": "Ne vous est-il jamais arrivé de croire que vous pouviez tout simplement retourner voir ce que vous aviez saisi à l’étape précédente lors de votre déclaration d’impôts, par exemple, et de constater peu après que tout ce que vous aviez saisi avant ce remords était perdu ? Évitons ce genre de déception à nos utilisateurs.",
-    "tags": ["Basics", "Accessibilité", "Conception","Développement", "Formulaires"],
+    "tags": [
+      "Basics",
+      "Accessibilité",
+      "Conception",
+      "Développement",
+      "Formulaires"
+    ],
     "objectives": [
       "Faciliter l’utilisation des formulaires répartis sur plusieurs pages successives.",
       "Limiter les risques d’abandon en cours de processus."
@@ -170,9 +391,7 @@
     "path": "/rules/92",
     "description": "Saisissez votre adresse e-mail. C’est bon, c’est fait ? Et si maintenant je vous demande de la saisir de nouveau, vous allez peut-être avoir la flemme de le faire et voudrez la copier depuis le premier champ pour la coller dans le deuxième. De quel droit certains sites voudraient-ils vous empêcher de faire cela ? Vive le copier-coller libre !",
     "tags": ["Basics", "Accessibilité", "Développement", "Formulaires"],
-    "objectives": [
-      "Faciliter la saisie dans les formulaires."
-    ],
+    "objectives": ["Faciliter la saisie dans les formulaires."],
     "implementationIntro": "",
     "implementation": [
       "Ne pas intercepter les événements JavaScript onpaste ou keydown pour bloquer le coller dans un champ de formulaire.",
