@@ -48,6 +48,58 @@
     "objective": "Assurer que les informations essentielles sont facilement accessibles et compréhensibles pour tous les utilisateurs, y compris ceux ayant des besoins spécifiques."
   },
   {
+    "id": 8,
+    "title": "Les contenus publicitaires ou sponsorisés sont identifiés comme tels.",
+    "authors": ["Abdulmalek ESUGHI"],
+    "path": "/rules/8",
+    "description": "Contenu éditorial ou publicitaire ? Article de fond ou publireportage ? Avis impartial ou billet sponsorisé ? Mieux vaut préciser de quoi il s'agit, ainsi les internautes sauront à quoi s'en tenir et n'auront rien à vous reprocher.",
+    "tags": ["Conception", "Contenus", "Editorial", "SEO", "Écoconception"],
+    "objectives": [
+      "Permettre aux utilisateurs d'identifier les contenus publicitaires et sponsorisés.",
+      "Respecter les règles de transparence et de confiance envers les utilisateurs."
+    ],
+    "implementationIntro": "Identifier clairement tout contenu publicitaire ou sponsorisé.",
+    "implementation": [
+      "Ajouter une mention explicite « Publicité » ou « Sponsorisé » avant le contenu",
+      "Utiliser une mise en page ou une couleur différente pour les contenus publicitaires",
+      "Inclure une mention légale précisant la nature publicitaire du contenu"
+    ],
+    "control": [
+      "Vérifier que tout contenu publicitaire porte une mention explicite.",
+      "Vérifier que les utilisateurs peuvent facilement identifier les contenus sponsorisés."
+    ],
+    "screenshotsSources": [
+      "https://www.service-public.fr/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Les conditions de modération des espaces publics sont indiquées.",
+    "path": "/rules/9",
+    "tags": ["Contenus", "Editorial"],
+    "objectives": [
+      "Informer les utilisateurs des règles de modération des espaces publics.",
+      "Assurer la transparence concernant les contenus autorisés et interdits."
+    ],
+    "implementationIntro": "Afficher clairement les conditions de modération des espaces publics.",
+    "implementation": [
+      "Publier les conditions de modération de manière visible",
+      "Indiquer quels types de contenus sont autorisés ou interdits",
+      "Expliquer les conséquences du non-respect des règles"
+    ],
+    "control": [
+      "Vérifier la présence de conditions de modération dans les espaces publics.",
+      "Vérifier que les conditions sont faciles à trouver et à comprendre."
+    ],
+    "screenshotsSources": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
     "id": 10,
     "title": "Les contenus ou fichiers destinés à des espaces publics peuvent être vérifiés avant leur envoi définitif.",
     "authors": ["Marco BARONI"],
@@ -59,16 +111,125 @@
       "Diminuer le nombre de demandes de rectification ou de suppression."
     ],
     "implementationIntro": "Mettre en place une prévisualisation des informations saisies avant la soumission définitive du formulaire, avec possibilité de les modifier.",
-    "implementation": [],
+    "implementation": [
+      "Afficher un aperçu du contenu avant publication",
+      "Permettre la modification du contenu en prévisualisation",
+      "Ajouter un bouton de confirmation final"
+    ],
     "control": [
       "Pour chaque espace public du site (zone de commentaire, forum, page personnelle publique, avatar, portfolio de documents, etc.) :",
       "Saisir des informations destinées à être rendues publiques telles que des images associées à un compte ou un commentaire.",
       "Vérifier que la soumission définitive du formulaire de saisie est précédée d'une étape permettant, si l'utilisateur le souhaite, de contrôler et de modifier le résultat de sa saisie avant publication."
     ],
     "screenshotsSources": [
-      "https://www.gmail.com/",
-      "https://www.nuxt.com/blog",
-      "https://developer.mozilla.org/fr/"
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Les espaces publics proposent au moins un moyen de signaler les abus.",
+    "path": "/rules/11",
+    "tags": ["Conception", "Contenus"],
+    "objectives": [
+      "Permettre aux utilisateurs de signaler les contenus abusifs ou inappropriés.",
+      "Assurer une modération efficace des espaces publics."
+    ],
+    "implementationIntro": "Mettre en place un système de signalement des abus dans les espaces publics.",
+    "implementation": [
+      "Ajouter un bouton ou un lien « Signaler » visible sur chaque contenu",
+      "Mettre en place un formulaire simple pour signaler les abus",
+      "Définir une procédure de traitement des signalements"
+    ],
+    "control": [
+      "Vérifier la présence d'un moyen de signaler les abus dans les espaces publics.",
+      "Vérifier que ce moyen est facilement accessible et fonctionnel."
+    ],
+    "screenshotsSources": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Chaque graphique est accompagné de ses données numériques.",
+    "path": "/rules/12",
+    "tags": ["Accessibilité", "Conception", "Contenus", "Editorial", "SEO"],
+    "objectives": [
+      "Rendre les graphiques accessibles à tous les utilisateurs.",
+      "Permettre la réutilisation et la vérification des données."
+    ],
+    "implementationIntro": "Accompagner chaque graphique de ses données numériques source.",
+    "implementation": [
+      "Afficher un tableau de données numériques avec le graphique",
+      "Fournir un lien de téléchargement des données",
+      "Ajouter une description textuelle du graphique"
+    ],
+    "control": [
+      "Vérifier que chaque graphique dispose de ses données numériques.",
+      "Vérifier que les utilisateurs peuvent accéder aux données même sans affichage graphique."
+    ],
+    "screenshotsSources": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": 13,
+    "title": "La page des résultats de recherche indique le nombre de résultats, le nombre de pages de résultats, et le nombre de résultats par page.",
+    "path": "/rules/13",
+    "tags": ["Conception", "Contenus", "Développement"],
+    "objectives": [
+      "Aider l'utilisateur à évaluer rapidement le volume de résultats.",
+      "Permettre une navigation efficace dans les résultats de recherche."
+    ],
+    "implementationIntro": "Afficher clairement les informations de pagination sur la page de résultats.",
+    "implementation": [
+      "Afficher le nombre total de résultats trouvés",
+      "Indiquer le nombre de pages disponibles",
+      "Afficher le nombre de résultats affichés par page",
+      "Permettre de modifier le nombre de résultats par page"
+    ],
+    "control": [
+      "Effectuer une recherche sur le site.",
+      "Vérifier que le nombre total de résultats est affiché.",
+      "Vérifier que le nombre de pages est indiqué.",
+      "Vérifier que le nombre de résultats par page est visible."
+    ],
+    "screenshotsSources": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Les contenus ne détournent pas de caractères pour simuler une mise en forme visuelle.",
+    "path": "/rules/14",
+    "tags": ["Accessibilité", "Contenus", "Editorial", "SEO"],
+    "objectives": [
+      "Assurer l'accessibilité des contenus pour tous les utilisateurs.",
+      "Améliorer la lisibilité et la compréhension du contenu."
+    ],
+    "implementationIntro": "Utiliser les balises HTML appropriées plutôt que des caractères détournés.",
+    "implementation": [
+      "Utiliser les titres HTML (h1, h2, h3) au lieu d'astérisques ou points",
+      "Utiliser les listes HTML au lieu de tirets ou numéros détournés",
+      "Utiliser l'emphase HTML (strong, em) au lieu d'astérisques ou majuscules",
+      "Utiliser CSS pour la mise en forme visuelle"
+    ],
+    "control": [
+      "Vérifier que les titres utilisent les balises HTML appropriées.",
+      "Vérifier qu'aucun caractère ne remplace une balise de sémantique.",
+      "Vérifier la lisibilité du code source par les lecteurs d'écran."
+    ],
+    "screenshotsSources": [
+      "",
+      "",
+      ""
     ]
   },
 
