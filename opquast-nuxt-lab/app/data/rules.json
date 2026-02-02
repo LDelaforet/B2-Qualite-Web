@@ -1152,6 +1152,197 @@
     "screenshotsSources": []
   },
   {
+    "id": 153,
+    "title": "Le site ne commet pas d'ouvertures de fenêtres non sollicitées",
+    "authors": ["Xerly JI"],
+    "path": "/rules/153",
+    "description": "Cette règle interdit les \"splash screens\". L'accès aux contenus doit être direct dès l'arrivée sur l'URL demandée.",
+    "tags": ["Navigation", "Accessibilité", "Conception", "UX"],
+    "objectives": [
+      "Permettre un accès immédiat au contenu demandé.",
+      "Éviter de faire perdre du temps aux utilisateurs avec des pages d'entrée inutiles.",
+      "Améliorer l'expérience utilisateur et le référencement."
+    ],
+    "implementationIntro": "Garantir que chaque URL affiche directement le contenu attendu :",
+    "implementation": [
+      "Supprimer les pages de type \"splash screen\" ou \"page de bienvenue\" qui bloquent l'accès au contenu.",
+      "Seules les barrières légales (vérification d'âge, consentement RGPD) sont acceptables."
+    ],
+    "control": [
+      "Vérifier que l'accès à n'importe quelle URL du site affiche directement le contenu correspondant.",
+      "Vérifier qu'aucune page intermédiaire n'oblige l'utilisateur à cliquer pour accéder au contenu principal."
+    ],
+    "screenshotsSources": [
+      "Bonne pratique - Accès direct",
+      "Mauvaise pratique - Splash screen",
+      "Exception - Barrière légale"
+    ]
+  },
+  {
+    "id": 154,
+    "title": "La navigation ne provoque pas l'ouverture de popups",
+    "authors": ["Xerly JI"],
+    "path": "/rules/154",
+    "description": "Cette règle vise à éradiquer les fenêtres surgissantes qui s'ouvrent sans action de l'utilisateur. Ces \"pestes du web\" perturbent la navigation et sont souvent bloquées par les navigateurs.",
+    "tags": ["Navigation", "Accessibilité", "Conception", "UX"],
+    "objectives": [
+      "Préserver le confort de navigation de l'utilisateur.",
+      "Éviter les interruptions non sollicitées.",
+      "Respecter le contrôle de l'utilisateur sur sa fenêtre de navigation."
+    ],
+    "implementationIntro": "Éviter tout déclenchement automatique de fenêtres :",
+    "implementation": [
+      "Ne pas utiliser window.open() au chargement de la page ou lors de la navigation.",
+      "Privilégier les liens HTML classiques qui s'ouvrent dans la même fenêtre.",
+      "Si une nouvelle fenêtre est nécessaire, elle doit être déclenchée par une action explicite de l'utilisateur."
+    ],
+    "control": [
+      "Naviguer sur l'ensemble du site et vérifier qu'aucune fenêtre ne s'ouvre automatiquement.",
+      "Vérifier le code source pour détecter les appels à window.open() non sollicités."
+    ],
+    "screenshotsSources": [
+      "Bonne pratique - Lien direct",
+      "Mauvaise pratique - Popup",
+      "Attention - Popin interstitiel"
+    ]
+  },
+  {
+    "id": 155,
+    "title": "Il est possible de revenir à la page d'accueil depuis toutes les pages",
+    "authors": ["Xerly JI"],
+    "path": "/rules/155",
+    "description": "Cette règle garantit que l'utilisateur ne se retrouve jamais dans une \"impasse\" numérique. Un lien vers l'accueil doit être présent sur chaque page, souvent via le logo ou un menu de navigation, pour permettre de se réorienter facilement.",
+    "tags": ["Navigation", "Accessibilité", "Conception", "UX"],
+    "objectives": [
+      "Permettre à l'utilisateur de se réorienter à tout moment.",
+      "Éviter les situations de blocage dans la navigation.",
+      "Faciliter l'exploration du site."
+    ],
+    "implementationIntro": "Assurer la présence d'un lien vers l'accueil sur toutes les pages :",
+    "implementation": [
+      "Rendre le logo du site cliquable et pointant vers la page d'accueil (/).",
+      "Inclure un lien \"Accueil\" dans le menu de navigation principal.",
+      "Optionnellement, utiliser un fil d'Ariane commençant par l'accueil."
+    ],
+    "control": [
+      "Vérifier sur chaque page du site la présence d'un lien vers l'accueil.",
+      "Tester que le logo est bien cliquable et mène à la racine du site."
+    ],
+    "screenshotsSources": [
+      "Bonne pratique - Logo cliquable",
+      "Mauvaise pratique - Page isolée",
+      "Alternative - Fil d'Ariane"
+    ]
+  },
+  {
+    "id": 156,
+    "title": "La page en cours de consultation est indiquée dans le menu de navigation",
+    "authors": ["Xerly JI"],
+    "path": "/rules/156",
+    "description": "L'utilisateur doit pouvoir comprendre à tout moment dans quelle rubrique ou sous-rubrique il se trouve. Cela passe généralement par un fil d'Ariane, une mise en évidence dans le menu de navigation (état actif) ou un titre de page explicite.",
+    "tags": ["Navigation", "Accessibilité", "Conception", "UX"],
+    "objectives": [
+      "Permettre à l'utilisateur de se situer dans l'arborescence du site.",
+      "Faciliter la compréhension de la structure du site.",
+      "Améliorer l'orientation et réduire la charge cognitive."
+    ],
+    "implementationIntro": "Indiquer clairement la position de l'utilisateur :",
+    "implementation": [
+      "Utiliser un fil d'Ariane avec le chemin hiérarchique complet.",
+      "Mettre en évidence visuellement l'élément de menu correspondant à la page courante.",
+      "Utiliser l'attribut aria-current=\"page\" pour l'accessibilité."
+    ],
+    "control": [
+      "Vérifier sur chaque page que l'utilisateur peut identifier sa position dans le site.",
+      "Contrôler la présence d'un fil d'Ariane ou d'un état actif dans le menu."
+    ],
+    "screenshotsSources": [
+      "Bonne pratique - Fil d'Ariane",
+      "Mauvaise pratique - Aucune indication",
+      "Alternative - Menu avec état actif"
+    ]
+  },
+  {
+    "id": 157,
+    "title": "Les items actifs de menu sont signalés",
+    "authors": ["Xerly JI"],
+    "path": "/rules/157",
+    "description": "Le menu de navigation doit indiquer visuellement quelle est la page ou la rubrique en cours de consultation. Cela permet à l'utilisateur de se situer immédiatement dans la structure du site. On utilise généralement un changement de couleur, un soulignement ou un indicateur graphique.",
+    "tags": ["Navigation", "Accessibilité", "Conception", "UX"],
+    "objectives": [
+      "Permettre à l'utilisateur d'identifier instantanément la page en cours.",
+      "Améliorer la lisibilité de la navigation.",
+      "Renforcer l'accessibilité pour les utilisateurs de technologies d'assistance."
+    ],
+    "implementationIntro": "Distinguer visuellement l'élément de menu actif :",
+    "implementation": [
+      "Appliquer une classe CSS \"active\" à l'élément de menu correspondant à la page courante.",
+      "Utiliser l'attribut aria-current=\"page\" pour les technologies d'assistance.",
+      "Différencier visuellement l'item actif (couleur, soulignement, poids de police)."
+    ],
+    "control": [
+      "Naviguer sur différentes pages et vérifier que le menu indique toujours la page courante.",
+      "Vérifier la présence de l'attribut aria-current dans le code source."
+    ],
+    "screenshotsSources": [
+      "Bonne pratique - Onglet actif visible",
+      "Mauvaise pratique - Aucune distinction",
+      "Technique - Attribut ARIA"
+    ]
+  },
+  {
+    "id": 158,
+    "title": "Les blocs de navigation de même nature sont affichés au même emplacement sur toutes les pages",
+    "authors": ["Xerly JI"],
+    "path": "/rules/158",
+    "description": "Les éléments de navigation (menu principal, barre de recherche, pied de page) doivent conserver la même position sur l'ensemble du site. Cette prévisibilité réduit l'effort cognitif de l'utilisateur et facilite l'apprentissage de l'interface.",
+    "tags": ["Navigation", "Accessibilité", "Conception", "UX"],
+    "objectives": [
+      "Assurer une cohérence visuelle sur l'ensemble du site.",
+      "Réduire l'effort d'apprentissage de l'interface.",
+      "Faciliter la navigation pour tous les utilisateurs."
+    ],
+    "implementationIntro": "Maintenir une structure de page constante :",
+    "implementation": [
+      "Utiliser un template ou layout unique pour toutes les pages.",
+      "Conserver le header, le menu principal et le footer aux mêmes positions.",
+      "Éviter de déplacer ou masquer des éléments de navigation selon les pages."
+    ],
+    "control": [
+      "Comparer plusieurs pages du site pour vérifier la constance de l'emplacement des éléments de navigation.",
+      "Vérifier que le menu, le logo et le footer sont toujours au même endroit."
+    ],
+    "screenshotsSources": [
+      "Page Accueil - Menu en haut",
+      "Page Produit - Menu identique",
+      "Mauvaise pratique - Navigation instable"
+    ]
+  },
+  {
+    "id": 159,
+    "title": "Les icônes de navigation sont accompagnées d'une légende explicite",
+    "authors": ["Xerly JI"],
+    "path": "/rules/159",
+    "description": "Cette règle demande que les icônes utilisées pour la navigation ou les actions soient accompagnées d'un texte visible. Cela limite le temps d'apprentissage de l'interface et évite les erreurs de compréhension, car une icône seule peut être ambiguë.",
+    "tags": ["Navigation", "Accessibilité", "Conception", "UX"],
+    "objectives": [
+      "Rendre l'interface compréhensible au premier coup d'œil.",
+      "Éviter les ambiguïtés liées aux icônes non universelles.",
+      "Améliorer l'accessibilité pour tous les utilisateurs."
+    ],
+    "implementationIntro": "Accompagner chaque icône d'un texte visible :",
+    "implementation": [
+      "Ajouter un texte visible à côté ou en dessous de chaque icône de navigation.",
+      "Utiliser aria-hidden=\"true\" sur l'icône si le texte est présent.",
+      "Prévoir un tooltip ou un libellé accessible en complément."
+    ],
+    "control": [
+      "Identifier toutes les icônes de navigation du site.",
+      "Vérifier que chacune est accompagnée d'un texte explicite visible."
+    ],
+    "screenshotsSources": [
+      "Bonne pratique - Icônes avec texte",
+      "Mauvaise pratique - Icônes seules"
     "id": 101,
     "title": "L'identité de l'auteur, de la société ou de l'organisation est indiquée.",
     "authors": ["Matteo LINGLET"],
